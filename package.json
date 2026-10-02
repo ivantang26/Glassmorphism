@@ -1,0 +1,24 @@
+{
+  "name": "lumen",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Lumen — landing site for a fictional budgeting app. An accessible glassmorphism study.",
+  "scripts": {
+    "dev": "vite dev",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "build": "node scripts/check-contrast.mjs && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.70.3",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "svelte": "^5.57.1",
+    "vite": "^8.3.2"
+  },
+  "dependencies": {
+    "@fontsource/plus-jakarta-sans": "^5.3.0",
+    "qrcode-generator": "^2.0.4"
+  }
+}

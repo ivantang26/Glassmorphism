@@ -1,0 +1,378 @@
+/*
+ * Lumen design tokens.
+ *
+ * Every colour that text can sit on is declared here, and
+ * scripts/check-contrast.mjs reads this file at build time (FR-7).
+ * Keep values as plain hex / rgb() / rgba() / var() so the checker can parse them.
+ */
+
+:root {
+	/* Brand colour field */
+	--violet: #7C5CFF;
+	--teal: #2EC4B6;
+	--coral: #FF8A65;
+	--blue: #5AA9FF;
+	--indigo: #14123A;
+	--lavender: #EEF0FF;
+
+	/* Primary button: deepened violet and teal so white text clears 4.5:1 */
+	--btn-from: #5B3DF5;
+	--btn-to: #0E7C74;
+	--btn-text: #FFFFFF;
+
+	/* Nav is always a light glass bar, whatever section sits beneath it */
+	--nav-fill: rgba(255, 255, 255, 0.55);
+	--nav-fill-scrolled: rgba(255, 255, 255, 0.75);
+	--nav-fallback: rgba(255, 255, 255, 0.92);
+	--nav-text: #14123A;
+	--nav-blur: 16px;
+	--nav-height: 64px;
+
+	--radius-card: 24px;
+	--radius-inner: 16px;
+	--radius-pill: 999px;
+
+	--font: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--fs-display: clamp(2.5rem, 1.6rem + 4.6vw, 5.5rem);
+	--fs-h2: clamp(1.75rem, 1.2rem + 2.6vw, 3rem);
+	--fs-h3: clamp(1.15rem, 1.05rem + 0.5vw, 1.375rem);
+	--fs-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+	--fs-small: 0.875rem;
+
+	--ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+	--gutter: 16px;
+	--container: 1200px;
+}
+
+/* ---------- Section themes (FR-8) ---------- */
+
+.theme-light {
+	--base: var(--lavender);
+	--blob-alpha: 0.55;
+	--glass-fill: rgba(255, 255, 255, 0.55);
+	--glass-fill-nested: rgba(255, 255, 255, 0.45);
+	--glass-fallback: rgba(255, 255, 255, 0.92);
+	--glass-border: rgba(255, 255, 255, 0.70);
+	--glass-blur: 20px;
+	--glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.12);
+	--text-on-glass: #14123A;
+	--text-muted: #3D3A66;
+	--text-positive: #0A6446;
+	--text-negative: #A3222B;
+	--text-link: #4325C9;
+	--text-on-bg: #14123A;
+	--text-on-bg-muted: #2A2752;
+	--track: rgba(20, 18, 58, 0.12);
+	--focus: #4325C9;
+	color-scheme: light;
+}
+
+.theme-dark {
+	--base: var(--indigo);
+	/* 0.24, not higher: overlapping teal + blue blobs under a 0.10 white panel
+	   would otherwise pull white text below 4.5:1 (caught by FR-7) */
+	--blob-alpha: 0.24;
+	--glass-fill: rgba(255, 255, 255, 0.10);
+	--glass-fill-nested: rgba(255, 255, 255, 0.03);
+	--glass-fallback: rgba(36, 32, 92, 0.92);
+	--glass-border: rgba(255, 255, 255, 0.22);
+	--glass-blur: 24px;
+	--glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+	--text-on-glass: #FFFFFF;
+	--text-muted: #ECEAFF;
+	--text-positive: #C2F7E0;
+	--text-negative: #FFE7E2;
+	--text-link: #F1EDFF;
+	--text-on-bg: #FFFFFF;
+	--text-on-bg-muted: #E2E0FA;
+	--track: rgba(255, 255, 255, 0.16);
+	--focus: #FFFFFF;
+	color-scheme: dark;
+}
+
+/* Security page: fewer blobs, quieter colour, more opaque panels */
+.theme-calm {
+	--base: var(--lavender);
+	--blob-alpha: 0.35;
+	--glass-fill: rgba(255, 255, 255, 0.72);
+	--glass-fill-nested: rgba(255, 255, 255, 0.55);
+	--glass-fallback: rgba(255, 255, 255, 0.94);
+	--glass-border: rgba(255, 255, 255, 0.85);
+	--glass-blur: 20px;
+	--glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.10);
+	--text-on-glass: #14123A;
+	--text-muted: #3D3A66;
+	--text-positive: #0A6446;
+	--text-negative: #A3222B;
+	--text-link: #4325C9;
+	--text-on-bg: #14123A;
+	--text-on-bg-muted: #2A2752;
+	--track: rgba(20, 18, 58, 0.12);
+	--focus: #4325C9;
+	color-scheme: light;
+}
+
+/* Blur is costly on mobile GPUs: step it down with the viewport (section 6) */
+@media (max-width: 767px) {
+	.theme-light, .theme-dark, .theme-calm { --glass-blur: 12px; }
+	:root { --nav-blur: 12px; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+	.theme-light, .theme-dark, .theme-calm { --glass-blur: 16px; }
+}
+@media (min-width: 768px) {
+	:root { --gutter: 24px; }
+}
+@media (min-width: 1024px) {
+	:root { --gutter: 32px; }
+}
+
+/* ---------- Base ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+	-webkit-text-size-adjust: 100%;
+	scroll-padding-top: calc(var(--nav-height) + 16px);
+}
+
+body {
+	margin: 0;
+	font-family: var(--font);
+	font-size: var(--fs-body);
+	line-height: 1.6;
+	color: #14123A;
+	background: #14123A;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; }
+h1, h2, h3, h4, p, ul, ol, figure, blockquote, dl, dd { margin: 0; }
+ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
+button, input, select { font: inherit; color: inherit; }
+a { color: inherit; }
+
+h1, h2, h3 { font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
+h1 { font-size: var(--fs-display); letter-spacing: -0.035em; line-height: 1.02; }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); line-height: 1.25; }
+p { text-wrap: pretty; }
+
+.num { font-variant-numeric: tabular-nums; font-weight: 600; }
+
+:focus-visible {
+	outline: 3px solid var(--focus, #4325C9);
+	outline-offset: 3px;
+	border-radius: 6px;
+}
+
+.sr-only {
+	position: absolute !important;
+	width: 1px; height: 1px;
+	padding: 0; margin: -1px;
+	overflow: hidden; clip: rect(0 0 0 0);
+	white-space: nowrap; border: 0;
+}
+
+.skip-link {
+	position: absolute;
+	left: 16px; top: -100px;
+	z-index: 100;
+	padding: 12px 18px;
+	border-radius: 12px;
+	background: #FFFFFF;
+	color: #14123A;
+	font-weight: 600;
+}
+.skip-link:focus { top: 12px; }
+
+/* ---------- Layout ---------- */
+
+/* A band is a run of sections sharing one theme and one colour field */
+.band {
+	position: relative;
+	isolation: isolate;
+	overflow: clip;
+	background: var(--base);
+	color: var(--text-on-bg);
+}
+.band > :not(.blobs) { position: relative; z-index: 1; }
+
+.block { padding-block: clamp(56px, 8vw, 112px); }
+.block-tight { padding-block: clamp(24px, 4vw, 48px); }
+
+.container {
+	width: 100%;
+	max-width: calc(var(--container) + var(--gutter) * 2);
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+
+.eyebrow {
+	display: inline-block;
+	font-size: var(--fs-small);
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--text-on-bg-muted);
+	margin-bottom: 12px;
+}
+.lede {
+	font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+	color: var(--text-on-bg-muted);
+	max-width: 38rem;
+}
+.section-head { margin-bottom: clamp(32px, 5vw, 56px); }
+.section-head :is(h1, h2) + .lede { margin-top: 16px; }
+.section-head.center { text-align: center; }
+.section-head.center .lede { margin-inline: auto; }
+
+/* ---------- Glass ---------- */
+
+.glass {
+	position: relative;
+	background: var(--glass-fill);
+	border: 1px solid var(--glass-border);
+	border-radius: var(--radius-card);
+	box-shadow: var(--glass-shadow);
+	-webkit-backdrop-filter: blur(var(--glass-blur));
+	backdrop-filter: blur(var(--glass-blur));
+	color: var(--text-on-glass);
+}
+
+/* Never stack blur on blur: a panel inside a panel reuses its parent's frost */
+.glass .glass {
+	-webkit-backdrop-filter: none;
+	backdrop-filter: none;
+	background: var(--glass-fill-nested);
+	box-shadow: none;
+}
+
+/* Moving edge highlight for tilted cards */
+.glass[data-tilt]::after {
+	content: '';
+	position: absolute;
+	inset: -1px;
+	border-radius: inherit;
+	padding: 1px;
+	background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, 0.95), transparent 70%);
+	-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+	-webkit-mask-composite: xor;
+	mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+	opacity: 0;
+	transition: opacity 300ms ease;
+	pointer-events: none;
+}
+.glass[data-tilt].is-tilting::after { opacity: 1; }
+
+.chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 4px 12px;
+	border-radius: var(--radius-pill);
+	background: var(--glass-fill);
+	border: 1px solid var(--glass-border);
+	-webkit-backdrop-filter: blur(var(--glass-blur));
+	backdrop-filter: blur(var(--glass-blur));
+	font-size: var(--fs-small);
+	font-weight: 600;
+	color: var(--text-on-glass);
+	white-space: nowrap;
+}
+.glass .chip {
+	-webkit-backdrop-filter: none;
+	backdrop-filter: none;
+	background: var(--glass-fill-nested);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: 48px;
+	padding: 12px 24px;
+	border-radius: var(--radius-pill);
+	border: 1px solid transparent;
+	font-weight: 700;
+	font-size: 1rem;
+	line-height: 1.2;
+	text-decoration: none;
+	cursor: pointer;
+	transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out), background-color 200ms ease;
+}
+.btn-sm { min-height: 40px; padding: 8px 18px; font-size: 0.9375rem; }
+
+.btn-primary {
+	background: linear-gradient(135deg, var(--btn-from), var(--btn-to));
+	color: var(--btn-text);
+	box-shadow: 0 6px 20px rgba(91, 61, 245, 0.35);
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(91, 61, 245, 0.45); }
+
+.btn-glass {
+	background: var(--glass-fill);
+	border-color: var(--glass-border);
+	-webkit-backdrop-filter: blur(var(--glass-blur));
+	backdrop-filter: blur(var(--glass-blur));
+	color: var(--text-on-glass);
+}
+.btn-glass:hover { transform: translateY(-1px); }
+
+/* ---------- Progressive enhancement & preferences ---------- */
+
+/* FR-5: no backdrop-filter → near-solid panels so text never sits on raw colour */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+	.glass, .glass .glass, .chip, .btn-glass { background: var(--glass-fallback); }
+	.site-nav { background: var(--nav-fallback) !important; }
+}
+/* Same fallback, forced with ?noblur for QA in browsers that do support blur */
+.no-blur .glass, .no-blur .glass .glass, .no-blur .chip, .no-blur .btn-glass {
+	-webkit-backdrop-filter: none !important;
+	backdrop-filter: none !important;
+	background: var(--glass-fallback);
+}
+.no-blur .site-nav {
+	-webkit-backdrop-filter: none !important;
+	backdrop-filter: none !important;
+	background: var(--nav-fallback) !important;
+}
+
+@media (prefers-contrast: more) {
+	.theme-light, .theme-calm {
+		--glass-fill: #FFFFFF;
+		--glass-fill-nested: #F4F4FF;
+		--glass-border: #14123A;
+		--text-muted: #14123A;
+		--text-on-bg-muted: #14123A;
+	}
+	.theme-dark {
+		--glass-fill: #1C1A4A;
+		--glass-fill-nested: #26235C;
+		--glass-border: #FFFFFF;
+		--text-muted: #FFFFFF;
+		--text-on-bg-muted: #FFFFFF;
+	}
+	:root {
+		--nav-fill: #FFFFFF;
+		--nav-fill-scrolled: #FFFFFF;
+	}
+	.glass, .chip, .btn-glass, .site-nav {
+		-webkit-backdrop-filter: none !important;
+		backdrop-filter: none !important;
+	}
+	.btn-primary { background: #3B1FD1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

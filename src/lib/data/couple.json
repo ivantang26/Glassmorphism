@@ -1,0 +1,184 @@
+{
+	"id": "couple",
+	"label": "Couple",
+	"who": "Sam & Alex · shared rent and savings",
+	"asOf": "2026-09-19",
+	"balance": 3812.05,
+	"income": 4600,
+	"month": {
+		"name": "September",
+		"day": 19,
+		"daysInMonth": 30
+	},
+	"categories": [
+		{
+			"id": "rent",
+			"name": "Rent",
+			"budget": 1350,
+			"spent": 1350
+		},
+		{
+			"id": "bills",
+			"name": "Bills",
+			"budget": 260,
+			"spent": 210
+		},
+		{
+			"id": "groceries",
+			"name": "Groceries",
+			"budget": 480,
+			"spent": 318
+		},
+		{
+			"id": "transport",
+			"name": "Transport",
+			"budget": 180,
+			"spent": 96
+		},
+		{
+			"id": "eating",
+			"name": "Eating out",
+			"budget": 220,
+			"spent": 164
+		},
+		{
+			"id": "fun",
+			"name": "Fun & shopping",
+			"budget": 200,
+			"spent": 88
+		}
+	],
+	"spending": {
+		"last30": [
+			16.93,
+			17.3,
+			31.61,
+			37.75,
+			30.62,
+			27.39,
+			32.81,
+			37.9,
+			45.3,
+			19.11,
+			22.31,
+			1366.26,
+			22.37,
+			24.41,
+			176,
+			28.99,
+			62.66,
+			22.5,
+			32.25,
+			31.28,
+			11.59,
+			11.33,
+			54.32,
+			57.18,
+			37.39,
+			33.04,
+			32.41,
+			31.57,
+			36.83,
+			20.59
+		],
+		"previous30": [
+			23.42,
+			44.54,
+			40.81,
+			26.97,
+			14.27,
+			27.85,
+			29.89,
+			22.69,
+			46.48,
+			43.12,
+			19.47,
+			1371.32,
+			24.36,
+			15.63,
+			186.59,
+			30.22,
+			23.78,
+			44.3,
+			22.21,
+			25.22,
+			36.87,
+			44.03,
+			49.3,
+			48.95,
+			41.32,
+			29.86,
+			47.47,
+			25.11,
+			29.55,
+			77.4
+		]
+	},
+	"goals": [
+		{
+			"name": "House deposit",
+			"saved": 9400,
+			"target": 20000
+		},
+		{
+			"name": "Wedding",
+			"saved": 2150,
+			"target": 8000
+		},
+		{
+			"name": "Emergency fund",
+			"saved": 3000,
+			"target": 3000
+		}
+	],
+	"transactions": [
+		{
+			"date": "2026-09-19",
+			"merchant": "Weekly shop — Greenway",
+			"category": "groceries",
+			"amount": -86.15
+		},
+		{
+			"date": "2026-09-18",
+			"merchant": "Energy bill",
+			"category": "bills",
+			"amount": -94
+		},
+		{
+			"date": "2026-09-17",
+			"merchant": "Cinema for two",
+			"category": "fun",
+			"amount": -24
+		},
+		{
+			"date": "2026-09-17",
+			"merchant": "Alex → joint account",
+			"category": "income",
+			"amount": 1150
+		},
+		{
+			"date": "2026-09-16",
+			"merchant": "Fuel — Roadside",
+			"category": "transport",
+			"amount": -48.3
+		},
+		{
+			"date": "2026-09-15",
+			"merchant": "Thai Orchid",
+			"category": "eating",
+			"amount": -42.6
+		},
+		{
+			"date": "2026-09-15",
+			"merchant": "Sam → joint account",
+			"category": "income",
+			"amount": 1150
+		},
+		{
+			"date": "2026-09-14",
+			"merchant": "Broadband",
+			"category": "bills",
+			"amount": -32
+		}
+	]
+}

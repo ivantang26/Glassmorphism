@@ -1,0 +1,184 @@
+{
+	"id": "graduate",
+	"label": "Graduate",
+	"who": "Priya, 24 · first job, paid monthly",
+	"asOf": "2026-09-19",
+	"balance": 1284.37,
+	"income": 2150,
+	"month": {
+		"name": "September",
+		"day": 19,
+		"daysInMonth": 30
+	},
+	"categories": [
+		{
+			"id": "rent",
+			"name": "Rent",
+			"budget": 750,
+			"spent": 750
+		},
+		{
+			"id": "bills",
+			"name": "Bills",
+			"budget": 140,
+			"spent": 92
+		},
+		{
+			"id": "groceries",
+			"name": "Groceries",
+			"budget": 220,
+			"spent": 96
+		},
+		{
+			"id": "transport",
+			"name": "Transport",
+			"budget": 110,
+			"spent": 48
+		},
+		{
+			"id": "eating",
+			"name": "Eating out",
+			"budget": 120,
+			"spent": 52
+		},
+		{
+			"id": "fun",
+			"name": "Fun & shopping",
+			"budget": 150,
+			"spent": 32
+		}
+	],
+	"spending": {
+		"last30": [
+			7.69,
+			28.07,
+			21.38,
+			16.69,
+			5.22,
+			15.76,
+			9.29,
+			5.27,
+			9.3,
+			29.64,
+			17.29,
+			761.52,
+			10.48,
+			75.73,
+			12.48,
+			25.05,
+			25.1,
+			10.04,
+			10.77,
+			15.71,
+			9.31,
+			10.87,
+			9.82,
+			24.42,
+			15.48,
+			9.25,
+			6.91,
+			17.4,
+			6.17,
+			17.89
+		],
+		"previous30": [
+			10.82,
+			17.92,
+			28.16,
+			11.83,
+			12.38,
+			17.25,
+			6.35,
+			11.95,
+			35.97,
+			18.25,
+			18.47,
+			765.32,
+			11.67,
+			72.06,
+			16.66,
+			29.71,
+			35.95,
+			20.22,
+			22.43,
+			13.62,
+			22.4,
+			10.6,
+			32.51,
+			20.52,
+			17.07,
+			6.15,
+			11.56,
+			15.65,
+			16.96,
+			17.59
+		]
+	},
+	"goals": [
+		{
+			"name": "Holiday fund",
+			"saved": 680,
+			"target": 1000
+		},
+		{
+			"name": "Emergency fund",
+			"saved": 1150,
+			"target": 3000
+		},
+		{
+			"name": "New laptop",
+			"saved": 240,
+			"target": 900
+		}
+	],
+	"transactions": [
+		{
+			"date": "2026-09-19",
+			"merchant": "Corner Grocer",
+			"category": "groceries",
+			"amount": -18.4
+		},
+		{
+			"date": "2026-09-18",
+			"merchant": "City Metro",
+			"category": "transport",
+			"amount": -6.8
+		},
+		{
+			"date": "2026-09-18",
+			"merchant": "Northside Coffee",
+			"category": "eating",
+			"amount": -4.2
+		},
+		{
+			"date": "2026-09-17",
+			"merchant": "Salary — Brightwell Ltd",
+			"category": "income",
+			"amount": 2150
+		},
+		{
+			"date": "2026-09-16",
+			"merchant": "Streamly",
+			"category": "bills",
+			"amount": -10.99
+		},
+		{
+			"date": "2026-09-15",
+			"merchant": "Paperback Co.",
+			"category": "fun",
+			"amount": -12.5
+		},
+		{
+			"date": "2026-09-14",
+			"merchant": "Market Hall Kitchen",
+			"category": "eating",
+			"amount": -21.3
+		},
+		{
+			"date": "2026-09-13",
+			"merchant": "Mobile plan",
+			"category": "bills",
+			"amount": -18
+		}
+	]
+}

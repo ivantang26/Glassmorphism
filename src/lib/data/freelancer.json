@@ -1,0 +1,190 @@
+{
+	"id": "freelancer",
+	"label": "Freelancer",
+	"who": "Jordan · illustrator, irregular income",
+	"asOf": "2026-09-19",
+	"balance": 5230.8,
+	"income": 3450,
+	"month": {
+		"name": "September",
+		"day": 19,
+		"daysInMonth": 30
+	},
+	"categories": [
+		{
+			"id": "rent",
+			"name": "Rent",
+			"budget": 900,
+			"spent": 900
+		},
+		{
+			"id": "bills",
+			"name": "Bills",
+			"budget": 160,
+			"spent": 151
+		},
+		{
+			"id": "groceries",
+			"name": "Groceries",
+			"budget": 260,
+			"spent": 204
+		},
+		{
+			"id": "transport",
+			"name": "Transport",
+			"budget": 90,
+			"spent": 57
+		},
+		{
+			"id": "eating",
+			"name": "Eating out",
+			"budget": 150,
+			"spent": 161
+		},
+		{
+			"id": "tools",
+			"name": "Work tools",
+			"budget": 120,
+			"spent": 89
+		},
+		{
+			"id": "fun",
+			"name": "Fun & shopping",
+			"budget": 140,
+			"spent": 66
+		}
+	],
+	"spending": {
+		"last30": [
+			15.18,
+			19.48,
+			58.31,
+			9.04,
+			18.86,
+			18.06,
+			14.76,
+			31.81,
+			19.1,
+			19.65,
+			31.68,
+			932.21,
+			19.46,
+			20.64,
+			10.6,
+			46.39,
+			19.09,
+			20.56,
+			10.85,
+			25.13,
+			87.19,
+			24.65,
+			34.25,
+			54.4,
+			10.79,
+			15.24,
+			18.73,
+			22.3,
+			28.11,
+			45.48
+		],
+		"previous30": [
+			13.59,
+			29.18,
+			48.96,
+			16.44,
+			22.76,
+			10.66,
+			26.7,
+			11.34,
+			45.75,
+			27.13,
+			21.15,
+			927.25,
+			13.62,
+			8.01,
+			9.08,
+			34.75,
+			19.45,
+			26.02,
+			19.37,
+			12.16,
+			73.66,
+			16.03,
+			16.4,
+			31.03,
+			26.51,
+			26.92,
+			18.82,
+			9.5,
+			13,
+			30.76
+		]
+	},
+	"goals": [
+		{
+			"name": "Tax pot",
+			"saved": 2640,
+			"target": 4200
+		},
+		{
+			"name": "3-month buffer",
+			"saved": 4900,
+			"target": 7500
+		},
+		{
+			"name": "Studio equipment",
+			"saved": 310,
+			"target": 1200
+		}
+	],
+	"transactions": [
+		{
+			"date": "2026-09-19",
+			"merchant": "Invoice #0412 — Fable & Finch",
+			"category": "income",
+			"amount": 1450
+		},
+		{
+			"date": "2026-09-18",
+			"merchant": "Design suite subscription",
+			"category": "tools",
+			"amount": -29.99
+		},
+		{
+			"date": "2026-09-18",
+			"merchant": "Noodle Bar",
+			"category": "eating",
+			"amount": -16.8
+		},
+		{
+			"date": "2026-09-17",
+			"merchant": "Corner Grocer",
+			"category": "groceries",
+			"amount": -31.25
+		},
+		{
+			"date": "2026-09-16",
+			"merchant": "Co-working day pass",
+			"category": "tools",
+			"amount": -18
+		},
+		{
+			"date": "2026-09-16",
+			"merchant": "Tapas evening",
+			"category": "eating",
+			"amount": -38.4
+		},
+		{
+			"date": "2026-09-15",
+			"merchant": "Invoice #0409 — Harbour Studio",
+			"category": "income",
+			"amount": 2000
+		},
+		{
+			"date": "2026-09-14",
+			"merchant": "Train to client",
+			"category": "transport",
+			"amount": -27.6
+		}
+	]
+}
