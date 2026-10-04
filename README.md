@@ -2,12 +2,12 @@
 
 Landing site for a fictional budgeting app with an interactive dashboard preview. It is a study in glassmorphism that meets WCAG AA text contrast on every glass panel.
 
-SvelteKit 2 + Svelte 5, prerendered to static HTML (`adapter-static`). Charts are hand-rolled SVG.
+SvelteKit 2 + Svelte 5, prerendered to static HTML for Vercel (`adapter-vercel`). Charts are hand-rolled SVG.
 
 ```bash
 npm install
 npm run dev              # http://localhost:5173
-npm run build            # runs the contrast check, then builds to ./build
+npm run build            # runs the contrast check, then builds to ./.vercel/output
 npm run check:contrast -- --verbose
 ```
 
